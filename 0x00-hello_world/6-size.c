@@ -3,11 +3,8 @@
 /**
  *main - prints the size of various types
  *
- *Description - This program prints the size of various
-  types on the computer it is compiled and run on.
- *Return: return (0);
+ *Return: 0
  */
-
 int main(void)
 {
 	char c;
