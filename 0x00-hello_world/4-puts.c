@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 /**
- *main - print a specified string
+ *main - print a specified
  *
- *Description: This function uses puts to print
- "Programming is like building a multilingual puzzle"
- *Return: return (0);
+ *Return: 0
  */
 int main(void)
 {
