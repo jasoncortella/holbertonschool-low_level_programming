@@ -17,15 +17,14 @@ int main(void)
 			{
 				for (l = 0; l < 10; l++)
 				{
-					if ( ((i + j) < (k + l) && i <= k )
-					     || ((i + j) == (k + l) && k > i) )
+					if (((i + j) < (k + l) && i <= k) || ((i + j) == (k + l) && k > i))
 					{
 						putchar(i + '0');
 						putchar(j + '0');
 						putchar(' ');
 						putchar(k + '0');
 						putchar(l + '0');
-						if ((i + j + k + l) < 35)
+						if ((i + j + k + l) < 36)
 						{
 							putchar(',');
 							putchar(' ');
