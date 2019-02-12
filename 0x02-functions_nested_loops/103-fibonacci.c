@@ -8,7 +8,6 @@
 
 int main(void)
 {
-	int i;
 	int fib0 = 0, fib1 = 1, count = 0;
 
 	while (fib1 < 4000000)
