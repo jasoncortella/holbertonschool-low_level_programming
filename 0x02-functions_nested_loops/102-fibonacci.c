@@ -19,6 +19,7 @@ int main(void)
 		fib1 = fib2 - fib1;
 		printf(", %lu", fib2);
 	}
+	printf("\n");
 
 	return (0);
 }
