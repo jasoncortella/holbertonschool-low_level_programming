@@ -10,7 +10,7 @@ int main(void)
 {
 	int i;
 
-	long fib1 = 1, fib2 = 2;
+	long fib1 = 1, fib2 = 2, fib1a, fib1b, fib2a, fib2b;
 	long split = 10000000000; /* long fails at fib 92, which has 20
 				   * digits. 'split' will be used to split
 				   * the number in half, digit wise
@@ -29,10 +29,10 @@ int main(void)
 		fib1 = fib2 - fib1;
 	}
 
-	long fib1a = fib1 / split;
-	long fib1b = fib1 % split;
-	long fib2a = fib2 / split;
-	long fib2b = fib2 % split;
+	fib1a = fib1 / split;
+	fib1b = fib1 % split;
+	fib2a = fib2 / split;
+	fib2b = fib2 % split;
 
 	for (i = 90; i < 98; i++)
 	{
