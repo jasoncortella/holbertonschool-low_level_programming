@@ -1,4 +1,3 @@
-holberton.h
 _putchar.c
 
 0-holberton
@@ -10,6 +9,7 @@ _putchar.c
 6-abs
 7-last_digit
 8-24_hours
+8-24
 9-times_table
 10-add
 11-98
