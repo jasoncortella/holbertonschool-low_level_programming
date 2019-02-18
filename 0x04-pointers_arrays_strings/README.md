@@ -56,3 +56,15 @@
 * Prototype: char *_strcpy(char *dest, char *src);
 * copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest.
 * Return value: the pointer to dest
+
+### 10. Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers
+* 100-atoi.c
+* Prototype: int _atoi(char *s);
+* convert a string to an integer.
+* If there are no numbers in the string, the function must return 0
+* not allowed to use long
+* use the -fsanitize=signed-integer-overflow gcc flag to compile
+
+### 11. Don't hate the hacker, hate the code
+* 101-keygen.c
+* generates random valid passwords for the program 101-crackme.
