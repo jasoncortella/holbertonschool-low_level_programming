@@ -6,7 +6,11 @@
  *@b: the second integer to swap
  */
 
-void reset_to_98(int *n)
+void swap_int(int *a, int *b)
 {
-	*n = 98;
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
