@@ -8,7 +8,7 @@
 
 int _atoi(char *s)
 {
-	int i, sign = 1, returnint = 0, flag = 0;
+	int i, sign = 1, result = 0, flag = 0;
 
 	for (i = 0;  s[i] != '\0' && flag != 2; i++)
 	{
@@ -18,14 +18,14 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			flag = 1;
-			returnint *= 10;
-			returnint += (s[i] - '0');
+			result *= 10;
+			result += (s[i] - '0');
 		}
 		else if (flag == 1)
 			flag = 2;
 	}
 
-	returnint *= sign;
+	result *= sign;
 
-	return (returnint);
+	return (result);
 }
