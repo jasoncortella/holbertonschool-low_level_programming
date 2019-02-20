@@ -1,4 +1,4 @@
-# 0x04. C - Pointers, arrays and strings 
+# 0x04. C - Pointers, arrays and strings
 ## Project answer files
 
 ### 0. 98 Battery st.
