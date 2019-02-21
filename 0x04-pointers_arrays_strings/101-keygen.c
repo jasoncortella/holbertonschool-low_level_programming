@@ -9,36 +9,19 @@
 
 int main (void)
 {
-	int i, count = 0;
-	int randint, randsmall;
+	int count = 0;
+	int randint;
 
 	srand(time(0));
 
-	while (count < 2772)
+	while (2772 - 126 > count)
 	{
 		randint = rand() % (126 - 33) + 33;
-
-		if (count + randint < 2772 - 159)
-		{
-			count += randint;
-			putchar(randint);
-		}
-		else if (count + randint >= 2772 - 159 && count + randint <= 2772 - 126)
-		{
-			count += randint;
-			putchar(randint);
-			randsmall = rand() % (97 - 33) + 33;
-			count += randsmall;
-			putchar(randsmall);
-		}
-		else
-		{
-			count += (2772 - count);
-			putchar(2772-count);
-		}
+		putchar(randint);
+		count += randint;
 	}
 
-	printf("\n");
+	putchar(2772 - count);
 
 	return (0);
 }
