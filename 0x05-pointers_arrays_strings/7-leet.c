@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- **cap_string - capitalizes all words of a string
+ **leet - capitalizes a string to leet speak
  *@str: the string to be converted
  *Return: the converted string
  */
@@ -18,12 +18,12 @@ char *leet(char *str)
 	while (str[i] != '\0')
 	{
 		for (j = 0; j <= 10; j++)
-                {
-                        if (str[i] == flags1[j])
-                                str[i] = flags2[j];
-                }
+		{
+			if (str[i] == flags1[j])
+				str[i] = flags2[j];
+		}
 
-                i++;
+		i++;
 	}
 	return (s);
 }
