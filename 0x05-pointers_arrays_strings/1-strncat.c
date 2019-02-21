@@ -12,6 +12,7 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
 	char *s = dest;
+
 	i = 0;
 	j = 0;
 

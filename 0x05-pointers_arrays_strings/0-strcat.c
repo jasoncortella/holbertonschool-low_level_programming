@@ -11,6 +11,7 @@ char *_strcat(char *dest, char *src)
 {
 	int i, j;
 	char *s = dest;
+
 	i = 0;
 	j = 0;
 
