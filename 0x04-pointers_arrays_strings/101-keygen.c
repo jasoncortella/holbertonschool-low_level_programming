@@ -10,8 +10,7 @@
 int main (void)
 {
 	int i, count = 0;
-	int randint;
-	char password[100];
+	int randint, randsmall;
 
 	srand(time(0));
 
@@ -19,17 +18,18 @@ int main (void)
 	{
 		randint = rand() % (126 - 33) + 33;
 
-		if (count + randint < 2772 - 200)
+		if (count + randint < 2772 - 159)
 		{
 			count += randint;
 			putchar(randint);
 		}
-		else if (count + randint >= 2772 - 200 && count + randint <= 2772 - 126)
+		else if (count + randint >= 2772 - 159 && count + randint <= 2772 - 126)
 		{
 			count += randint;
 			putchar(randint);
-			count += 80;
-			putchar(80);
+			randsmall = rand() % (97 - 33) + 33;
+			count += randsmall;
+			putchar(randsmall);
 		}
 		else
 		{
@@ -37,8 +37,6 @@ int main (void)
 			putchar(2772-count);
 		}
 	}
-
-	printf("\ncount 1 = %i\n", count);
 
 	printf("\n");
 
