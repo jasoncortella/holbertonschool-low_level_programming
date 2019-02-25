@@ -1,18 +1,20 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
- **_strchr - locates a character in a string
+ **_strpbrk - searches a string for any set of bytes
  *@s: the string to be parsed
- *@c: the character to look for
- *Return: (s) a pointer to the memory area s
+ *@accept: the characters to look for
+ *Return: (s) a pointer to the first matching instance, or 0 if no matches
  */
 
-char *_strchr(char *s, char c)
+char *_strpbrk(char *s, char *accept)
 {
-	int i;
+	int j;
 
-	for (i = 0; s[i] != '\0'; i++)
-		if (s[i] == c)
-			return (s + i);
-	return (0);
+	for (; *s != '\0'; s++)
+		for (j = 0; accept[j] != '\0'; j++)
+			if (*s == accept[j])
+				return (s);
+	return (NULL);
 }
