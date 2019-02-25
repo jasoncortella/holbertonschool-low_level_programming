@@ -5,10 +5,14 @@
  *@a: the board
  */
 
-void print_chessbpard(char (*a)[8])
+void print_chessboard(char (*a)[8])
 {
-	int i;
+	int i, j;
 
 	for (i = 0; i < 8; i++)
-		_putchar(
+	{
+		for (j = 0; j < 8; j++)
+			_putchar(a[i][j]);
+		_putchar('\n');
+	}
 }
