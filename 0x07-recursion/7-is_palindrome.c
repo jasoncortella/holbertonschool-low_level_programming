@@ -2,7 +2,7 @@
 
 /**
  *palcheck - checks if digit is the same as its palinbuddy
- *@guess: the string to check if palindrome
+ *@s: the string to check if palindrome
  *@n: the length of the string
  *Return: 1 if a factor is found, 0 otherwise
  */
@@ -24,15 +24,15 @@ int palcheck(char *s, int n)
 
 int _strlen_recursion(char *s)
 {
-        if (*s++ == '\0')
-                return (0);
-        else
-                return (1 + _strlen_recursion(s));
+	if (*s++ == '\0')
+		return (0);
+	else
+		return (1 + _strlen_recursion(s));
 }
 
 /**
  *is_palindrome - checks if a string is a palindrome
- *@2: the string to check
+ *@s: the string to check
  *Return: 1 if the number is a palindrome, 0 otherwise
  */
 
