@@ -20,12 +20,13 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (1);
 	}
-	for (i = 0; argv[1][i]; i++)
+/*	for (i = 0; argv[1][i]; i++)
 		if (argv[1][i] < '0' || argv[1][i] > '9')
 		{
 			printf("Error\n");
 			return (1);
 		}
+*/
 	change = atoi(argv[1]);
 	for (i = 0; change; i++)
 		while (change >= coins[i])
