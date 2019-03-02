@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - calculates the minimum nomuber of coins to make change
- * @argc: the number of arguments passed in
- * @argv: string of the arguments passed in
- * Return: 0 on success, 1 if incorrect arguments passed in
+ * main - makes change for input number (US currency)
+ * @argc: number of arguments
+ * @argv: string array of arguments
+ * Return: 0 on Success, 1 on Error
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int i, change, numcoins = 0, coins[5] = {25, 10, 5, 2, 1};
 
