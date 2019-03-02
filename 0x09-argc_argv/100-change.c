@@ -18,11 +18,8 @@ int main(int argc, char **argv)
 		return (1);
 	change = atoi(argv[1]);
 	for (i = 0; change; i++)
-		while (change >= coins[i])
-		{
+		for (; change >= coins[i]; numcoins++)
 			change -= coins[i];
-			numcoins++;
-		}
 	printf("%i\n", numcoins);
 	return (0);
 }
