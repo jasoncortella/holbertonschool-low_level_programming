@@ -39,3 +39,4 @@ _putchar.c
 _putchar.o
 main.c
 quote
+2-strncpy.c
