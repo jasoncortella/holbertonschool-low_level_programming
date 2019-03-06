@@ -41,11 +41,10 @@ char **strtow(char *str)
 			free(s);
 			return (NULL);
 		}
-		for (k = 0; str[i] != ' '; k++)
+		for (k = 0; str[i] && str[i] != ' '; k++)
 			s[j][k] = str[i++];
 		s[j][k] = 0;
 	}
-	s[j] = malloc(sizeof(char));
-	s[j][0] = 0;
+	s[j] = 0;
 	return (s);
 }
