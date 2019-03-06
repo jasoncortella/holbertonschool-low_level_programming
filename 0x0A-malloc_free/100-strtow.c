@@ -22,7 +22,7 @@ char **strtow(char *str)
 		if ((str[i] != ' ') && (str[i + 1] == '\0'))
 			numwords++;
 	}
-	s = malloc(numwords * sizeof(char *) + 1);
+	s = malloc((numwords + 1) * sizeof(char *));
 	if (!s)
 		return (NULL);
 	for (i = 0, j = 0; j < numwords; j++)
@@ -45,6 +45,9 @@ char **strtow(char *str)
 			s[j][k] = str[i];
 			i++;
 		}
+		s[j][k] = 0;
 	}
+	s[j] = 0;
+
 	return (s);
 }
