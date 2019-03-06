@@ -23,7 +23,7 @@ char **strtow(char *str)
 	}
 	if (numwords == 0)
 		return (NULL);
-	s = malloc(numwords * sizeof(char *) + 1);
+	s = malloc((1 + numwords) * sizeof(char *));
 	if (!s)
 		return (NULL);
 	for (i = 0, j = 0; j < numwords; j++)
@@ -31,7 +31,7 @@ char **strtow(char *str)
 		while (str[i] == ' ')
 			i++;
 		k = 0;
-		while (str[i + k] != ' ')
+		while (str[i + k] != ' ' && str[i + l])
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])
