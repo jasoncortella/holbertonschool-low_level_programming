@@ -40,6 +40,5 @@ char *argstostr(int ac, char **av)
 	}
 
 	s[k] = 0;
-	printf("%i\n", totlength);
 	return (s);
 }
