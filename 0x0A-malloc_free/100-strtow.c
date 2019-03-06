@@ -48,6 +48,5 @@ char **strtow(char *str)
 		s[j][k] = 0;
 	}
 	s[j] = 0;
-
 	return (s);
 }
