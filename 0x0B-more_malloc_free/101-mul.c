@@ -79,6 +79,12 @@ int main(int argc, char *argv[])
 		lresult--;
 	}
 	for (i = 0; i < (lresult - 1); i++)
+		if (result[i] >= 10)
+		{
+			result[i] %= 10;
+			result[i - 1] += result[i] / 10;
+		}
+	for (i = 0; i < (lresult - 1); i++)
 		_putchar(result[i] + '0');
 	_putchar('\n');
 	return (0);
