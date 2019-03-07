@@ -19,6 +19,20 @@ int digitcheck(char *str)
 	return (0);
 }
 
+/**
+ * _strlen - returns the length of a string
+ * @str: the string to check
+ * Return: the string length
+ */
+
+int _strlen(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
 
 /**
  * main - prints the product of the two arguments it receives
@@ -28,32 +42,44 @@ int digitcheck(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, result, rev_result;
+	int i, j, l1, l2, lresult;
+	char *result, *emsg = "Error\n";
 
 	for (i = 1; i <= 2; i++)
-	{
 		if (argc != 3 || digitcheck(argv[i]))
 		{
-			printf("Error\n");
+			while (*emsg)
+				_putchar(*emsg++);
 			exit(98);
 		}
-	}
-
-	i = atoi(argv[1]);
-	j = atoi(argv[2]);
-
-	result = i * j;
-
-	while (result)
+	l1 = _strlen(argv[1]);
+	l2 = _strlen(argv[2]);
+	lresult = l1 + l2 + 1;
+	result = malloc(sizeof(char) * lresult);
+	if (!result)
+		return (0);
+	for (i = 0; i <= l1 + l2; i++)
+		result[i] = 0;
+	for (i = 1; i <= 2; i++)
+		for (j = 0; argv[i][j]; j++)
+			argv[i][j] -= '0';
+	for (i = l1 - 1; i >= 0; i--)
+		for (j = l2 - 1; j >= 0; j--)
+		{
+			result[i + j + 1] += argv[1][i] * argv[2][j];
+			if (result[i + j + 1] > 10)
+			{
+				result[i + j] += result[i + j + 1] / 10;
+				result[i + j + 1] %= 10;
+			}
+		}
+	if (result[0] == 0)
 	{
-		rev_result = rev_result * 10 + result % 10;
-		result /= 10;
+		result++;
+		lresult--;
 	}
-	while (rev_result)
-	{
-		_putchar((rev_result % 10) + '0');
-		rev_result /= 10;
-	}
+	for (i = 0; i < (lresult - 1); i++)
+		_putchar(result[i] + '0');
 	_putchar('\n');
 	return (0);
 }
