@@ -52,16 +52,16 @@ int main(int argc, char *argv[])
 				_putchar(*emsg++);
 			exit(98);
 		}
-	while (*argv[1] == '0')
-		argv[1]++;
-	while (*argv[2] == '0')
-		argv[2]++;
 	l1 = _strlen(argv[1]);
 	l2 = _strlen(argv[2]);
 	lresult = l1 + l2 + 1;
 	result = malloc(sizeof(char) * lresult);
 	if (!result)
-		return (1);
+	{
+		while (*emsg)
+			_putchar(*emsg++);
+		exit(98);
+	}
 	for (i = 0; i <= l1 + l2; i++)
 		result[i] = 0;
 	for (i = 1; i <= 2; i++)
