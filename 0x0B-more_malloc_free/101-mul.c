@@ -55,13 +55,15 @@ void _error(void)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, lresult;
+	int i, j, l1, l2, lresult;
 	char *result;
 
 	for (i = 1; i <= 2; i++)
 		if (argc != 3 || digitcheck(argv[i]))
 			_error();
-	lresult = _strlen(argv[1]) + _strlen(argv[2]) + 1;
+	l1 = _strlen(argv[1]);
+	l2 = _strlen(argv[2]);
+	lresult = l1 + l2 + 1;
 	result = malloc(sizeof(char) * lresult);
 	if (!result)
 		_error();
@@ -70,11 +72,11 @@ int main(int argc, char *argv[])
 	for (i = 1; i <= 2; i++)
 		for (j = 0; argv[i][j]; j++)
 			argv[i][j] -= '0';
-	for (i = _strlen(argv[1]) - 1; i >= 0; i--)
-		for (j = _strlen(argv[2]) - 1; j >= 0; j--)
+	for (i = l1 - 1; i >= 0; i--)
+		for (j = l2 - 1; j >= 0; j--)
 		{
 			result[i + j + 1] += argv[1][i] * argv[2][j];
-			if (result[i + j + 1] > 10)
+			if (result[i + j + 1] >= 10)
 			{
 				result[i + j] += result[i + j + 1] / 10;
 				result[i + j + 1] %= 10;
@@ -85,12 +87,6 @@ int main(int argc, char *argv[])
 		result++;
 		lresult--;
 	}
-	for (i = 0; i < (lresult - 1); i++)
-		if (result[i] >= 10)
-		{
-			result[i] %= 10;
-			result[i - 1] += result[i] / 10;
-		}
 	for (i = 0; i < (lresult - 1); i++)
 		_putchar(result[i] + '0');
 	_putchar('\n');
