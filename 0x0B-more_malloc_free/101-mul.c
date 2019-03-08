@@ -35,6 +35,19 @@ int _strlen(char *str)
 }
 
 /**
+ * _error - prints error msg
+ */
+
+void _error(void)
+{
+	char *emsg = "Error\n";
+
+	while (*emsg)
+		_putchar(*emsg++);
+	exit(98);
+}
+
+/**
  * main - prints the product of the two arguments it receives
  * @argc: the number of arguments passed in
  * @argv: an array of the arguments passed in
@@ -42,33 +55,23 @@ int _strlen(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, l1, l2, lresult;
-	char *result, *emsg = "Error\n";
+	int i, j, lresult;
+	char *result;
 
 	for (i = 1; i <= 2; i++)
 		if (argc != 3 || digitcheck(argv[i]))
-		{
-			while (*emsg)
-				_putchar(*emsg++);
-			exit(98);
-		}
-	l1 = _strlen(argv[1]);
-	l2 = _strlen(argv[2]);
-	lresult = l1 + l2 + 1;
+			_error();
+	lresult = _strlen(argv[1]) + _strlen(argv[2]) + 1;
 	result = malloc(sizeof(char) * lresult);
 	if (!result)
-	{
-		while (*emsg)
-			_putchar(*emsg++);
-		exit(98);
-	}
-	for (i = 0; i <= l1 + l2; i++)
+		_error();
+	for (i = 0; i < lresult; i++)
 		result[i] = 0;
 	for (i = 1; i <= 2; i++)
 		for (j = 0; argv[i][j]; j++)
 			argv[i][j] -= '0';
-	for (i = l1 - 1; i >= 0; i--)
-		for (j = l2 - 1; j >= 0; j--)
+	for (i = _strlen(argv[1]) - 1; i >= 0; i--)
+		for (j = _strlen(argv[2]) - 1; j >= 0; j--)
 		{
 			result[i + j + 1] += argv[1][i] * argv[2][j];
 			if (result[i + j + 1] > 10)
