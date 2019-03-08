@@ -55,7 +55,7 @@ void _error(void)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, l1, l2, lresult;
+	int i, j, l1, l2, lresult, flag = 0;
 	char *result;
 
 	for (i = 1; i <= 2; i++)
@@ -87,12 +87,10 @@ int main(int argc, char *argv[])
 			}
 		}
 	if (result[0] == 0)
-	{
-		result++;
-		lresult--;
-	}
-	for (i = 0; i < (lresult - 1); i++)
+		flag = 1;
+	for (i = flag; i < (lresult - 1); i++)
 		_putchar(result[i] + '0');
 	_putchar('\n');
+	free(result);
 	return (0);
 }
