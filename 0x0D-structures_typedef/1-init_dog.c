@@ -6,12 +6,15 @@
  * @d: a pointer to the array being initialized
  * @name: the dogs name
  * @age: the dogs age
- * @ownwer: the dogs owner
+ * @owner: the dogs owner
  * Return: Always 0.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	if (d)
+	{
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	}
 }
