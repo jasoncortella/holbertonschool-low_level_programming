@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	output = get_op_func(argv[2])(a1, a2);
+	output = math_func(a1, a2);
 	printf("%i\n", output);
 
 	return (0);
