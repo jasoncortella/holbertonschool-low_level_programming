@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < (a1 - 1); i++)
 		printf("%02hhx ", mainpt[i]);
-	i++;
 	printf("%02hhx\n", mainpt[i]);
 
 	return (0);
