@@ -2,7 +2,7 @@
 
 /**
  * print_char - prints a character
- * @c: the character to be printed
+ * @valist: the character to be printed
  * Return: nothing
  */
 void print_char(va_list valist)
@@ -12,7 +12,7 @@ void print_char(va_list valist)
 
 /**
  * print_int - prints an integer
- * @i: the integer to be printed
+ * @valist: the integer to be printed
  * Return: nothing
  */
 void print_int(va_list valist)
@@ -22,7 +22,7 @@ void print_int(va_list valist)
 
 /**
  * print_float - prints a floating point
- * @f: the float to be printed
+ * @valist: the float to be printed
  * Return: nothing
  */
 void print_float(va_list valist)
@@ -32,7 +32,7 @@ void print_float(va_list valist)
 
 /**
  * print_str - prints a string
- * @s: the string to be printed
+ * @valist: the string to be printed
  * Return: nothing
  */
 void print_str(va_list valist)
