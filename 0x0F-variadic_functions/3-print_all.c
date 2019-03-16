@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 	va_list valist;
 	unsigned int i = 0, j;
 	char *separator = "";
-	print_t p[] = {
+	print_table p[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -68,7 +68,7 @@ void print_all(const char * const format, ...)
 
 	va_start(valist, format);
 
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (p[j].type)
