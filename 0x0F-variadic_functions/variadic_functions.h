@@ -5,11 +5,16 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/**
+ * struct print - a sturcture containing a var type and associated function
+ * @type: the type of variable to print
+ * @func: the function to print the variable
+ */
 typedef struct print
 {
 	char *type;
 	void (*func)(va_list);
-} print_t;
+} print_table;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
