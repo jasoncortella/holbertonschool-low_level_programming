@@ -1,8 +1,8 @@
 	extern printf
 	global main
 main:
-	mov rdi, format
-	mov rax, 0
+	mov edi, format
+	mov eax, 0
 	call printf
 	ret
 format:
