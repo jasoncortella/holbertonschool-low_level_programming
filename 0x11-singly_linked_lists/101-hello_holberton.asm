@@ -1,8 +1,10 @@
 	extern printf
 	global main
+
+	section .text
 main:
-	mov edi, format
-	mov eax, 0
+	mov rdi, format
+	mov rax, 0
 	call printf
 	ret
 format:
