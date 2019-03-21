@@ -1,7 +1,6 @@
 	extern printf
 	global main
 
-	section .text
 main:
 	mov rdi, format
 	mov rax, 0
