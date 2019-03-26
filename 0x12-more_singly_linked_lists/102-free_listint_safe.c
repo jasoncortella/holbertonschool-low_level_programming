@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - frees all the elements of a listint_t list
- * @hh: the input listint_t list
+ * @h: the input listint_t list
  *
  * Return: the size of the list that was freed
  */
