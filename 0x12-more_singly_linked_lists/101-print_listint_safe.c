@@ -9,9 +9,11 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i = 1, j;
+	uint i = 1, j;
 	const listint_t *tmp = head, *check;
 
+	if (!tmp)
+		exit(98);
 	for (; tmp; i++)
 	{
 		printf("[%p] %d\n", (void *)tmp, tmp->n);
