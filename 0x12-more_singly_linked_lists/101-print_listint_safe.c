@@ -9,7 +9,7 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	uint i = 1, j;
+	size_t i = 1, j;
 	const listint_t *tmp = head, *check;
 
 	for (; tmp; i++)
