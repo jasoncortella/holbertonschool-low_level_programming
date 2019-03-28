@@ -31,10 +31,10 @@
 * a function that returns the number of bits you would need to flip to get from one number to another.
 * Prototype: unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
-6. Endianness
+### 6. Endianness
 * File: 100-get_endianness.c
 * a function that checks the endianness.
 * Prototype: int get_endianness(void);
 
-7. Crackme3
+### 7. Crackme3
 Find the password for [this program](https://github.com/holbertonschool/0x13.c)
