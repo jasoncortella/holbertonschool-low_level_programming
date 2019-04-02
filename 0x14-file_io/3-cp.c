@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
 		if (wrcheck != ret)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
+	if (ret == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
+			exit(98);
 	ret = close(fd1);
 	if (ret == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
