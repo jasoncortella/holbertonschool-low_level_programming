@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int fd1, fd2, ret, wrcheck;
-	char buf[1024];
+	char buf[BUFSIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	fd2 = creat(argv[2], 0666);
 	if (fd2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-	while ((ret = read(fd1, buf, 1024)) > 0)
+	while ((ret = read(fd1, buf, BUFSIZE)) > 0)
 	{
 		wrcheck = (write(fd2, buf, ret));
 		if (wrcheck != ret)
