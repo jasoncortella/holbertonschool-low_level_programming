@@ -1,5 +1,6 @@
 # 0x16. C - Doubly linked lists
 ## This directory contains answer files to project 0x16
+#### Note - Some of the files in this directory are intentionally written unclearly with as few lines as possible as an exercise practice.  
 
 ### 0. Print list
 * a function that prints all the elements of a dlistint_t list.
