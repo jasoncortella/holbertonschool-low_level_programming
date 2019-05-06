@@ -19,3 +19,17 @@
 9-strcpy.c
 _putchar.c
 0-main.c
+testops-add.c
+ops-div.c
+ops.h
+ops-mod.c
+ops-mul.c
+ops-sub.c
+ops-add.o
+ops-div.o
+ops-mod.o
+ops-mul.o
+ops-sub.o
+ops-add.c
+len
+100-tests.py
