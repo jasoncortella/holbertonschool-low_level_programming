@@ -2,7 +2,7 @@
 
 /**
  * hash_djb2 - hash function implementing the djb2 algorithm
- * @str: inout string to apply the algorithm to
+ * @str: input string to apply the algorithm to
  * Return: hash value
  */
 unsigned long int hash_djb2(const unsigned char *str)
@@ -10,7 +10,7 @@ unsigned long int hash_djb2(const unsigned char *str)
 	unsigned long int hash;
 	int c;
 
-	/* Provided has algo */
+	/* Provided hash algo */
 	hash = 5381;
 	while ((c = *str++))
 	{
