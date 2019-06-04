@@ -17,7 +17,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !key || !*key || !value)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
-
 	current = ht->array[index];
 	value_copy = strdup(value);
 	if (!value_copy)
@@ -28,15 +27,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(value_copy);
 		return (0);
 	}
-
-	while (current && strcmp(current->key, key) != 0)
+	while (current && strcmp(current->key, key) != 0) /* Look for key */
 		current = current->next;
 	if (current) /* Match found, update value and return */
 	{
 		current->value = value_copy;
 		return (1);
 	}
-
+	/* No match found, create new node */
 	newNode = malloc(sizeof(hash_node_t));
 	if (!newNode)
 	{
