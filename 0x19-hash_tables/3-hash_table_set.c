@@ -12,38 +12,26 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *current, *newNode;
-	char *value_copy, *key_copy;
 
 	if (!ht || !key || !*key || !value)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
 	current = ht->array[index];
-	value_copy = strdup(value);
-	if (!value_copy)
-		return (0);
-	key_copy = strdup(key);
-	if (!key_copy)
-	{
-		free(value_copy);
-		return (0);
-	}
 	while (current && strcmp(current->key, key) != 0) /* Look for key */
 		current = current->next;
 	if (current) /* Match found, update value and return */
 	{
-		current->value = value_copy;
+		free (current->value);
+		current->value = strdup(value);
 		return (1);
 	}
-	/* No match found, create new node */
 	newNode = malloc(sizeof(hash_node_t));
 	if (!newNode)
 	{
-		free(value_copy);
-		free(key_copy);
 		return (0);
 	}
-	newNode->key = key_copy;
-	newNode->value = value_copy;
+	newNode->key = strdup(key);
+	newNode->value = strdup(value);
 	newNode->next = ht->array[index];
 	ht->array[index] = newNode;
 	return (1);
