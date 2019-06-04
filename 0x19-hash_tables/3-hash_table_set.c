@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *current, *newNode;
 
-	if (!ht || !key || !*key)
+	if (!ht || !key || !*key || !value)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
 	current = ht->array[index];
