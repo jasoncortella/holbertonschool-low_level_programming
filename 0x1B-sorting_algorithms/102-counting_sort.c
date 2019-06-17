@@ -17,14 +17,16 @@ void counting_sort(int *array, size_t size)
 			maxval = array[i];
 	}
 	countarray = calloc(maxval, sizeof(int));
+
 	for (i = 0; i < size; i++)
 	{
 		index = array[i];
 		countarray[index] += 1;
 	}
-	for (i = 1; i <= maxval; i++)
+
+	for (i = 1; i <= maxval + 1; i++)
 		countarray[i] += countarray[i - 1];
-	print_array(countarray + 1, maxval);
+	print_array(countarray, maxval + 1);
 
 	for (i = 0; i <= maxval; i++)
 		if (countarray[i] != countarray[i + 1] && countarray[i + 1])
