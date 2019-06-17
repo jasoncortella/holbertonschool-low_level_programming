@@ -21,9 +21,10 @@ void cocktail_sort_list(listint_t **list)
 				current = current->next;
 			else
 			{
-				swap_next(&current), print_list(*list);
+				swap_next(&current);
 				if (current == *list)
 					*list = current->prev;
+				print_list(*list);
 				swap = true;
 			}
 		}
