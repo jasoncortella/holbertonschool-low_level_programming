@@ -1,4 +1,4 @@
-#0x1B. C - Sorting algorithms & Big O
+# 0x1B. C - Sorting algorithms & Big O
 ## This directory is dedicated to [Holberton School](https://www.holbertonschool.com/) project 0x1B. THe project deals with sorting algorithms and time complexity.
 
 ### 0. Bubble sort
