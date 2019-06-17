@@ -7,18 +7,15 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *head, *tail, *current;
+	listint_t *current;
 	bool swap = true;
 
 	if (!list || !*list || !(*list)->next)
 		return;
-	head = current = *list;
-	for (; current->next; tail = current)
-		current = current->next;
 	while (swap)
 	{
-		swap = false, current = head;
-		while (current != tail && current->prev != tail)
+		swap = false, current = *list;
+		while (current->next)
 		{
 			if (current->n <= current->next->n)
 				current = current->next;
@@ -30,12 +27,7 @@ void cocktail_sort_list(listint_t **list)
 				swap = true;
 			}
 		}
-		if (current->prev != tail)
-			tail = tail->prev;
-		current = tail;
-		if (tail->prev != NULL)
-			tail = tail->prev;
-		while (current != head && current->next != head)
+		while (current->prev)
 		{
 			if (current->n >= current->prev->n)
 				current = current->prev;
@@ -47,8 +39,6 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list), swap = true;
 			}
 		}
-		if (current->next != head)
-			head = head->next;
 	}
 }
 
