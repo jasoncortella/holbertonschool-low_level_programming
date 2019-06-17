@@ -1,5 +1,5 @@
 # 0x1B. C - Sorting algorithms & Big O
-## This directory is dedicated to [Holberton School](https://www.holbertonschool.com/) project 0x1B. THe project deals with sorting algorithms and time complexity.
+## This directory is dedicated to [Holberton School](https://www.holbertonschool.com/) project 0x1B. The project deals with sorting algorithms and time complexity.
 
 ### 0. Bubble sort
 *  a function that sorts an array of integers in ascending order using the [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort) algorithm

@@ -3,3 +3,5 @@ bubble
 insertion
 quick
 select
+print_array.c
+print_list.c
