@@ -8,37 +8,23 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int *countarray, index, instances;
-	size_t i, maxval = 0;
+	int *carr;
+	size_t i, j, maxval = 0;
 
 	if (!array || size < 2)
 		return;
 	for (i = 0; i < size; i++)
-	{
 		if (array[i] > (int)maxval)
 			maxval = array[i];
-	}
-	countarray = calloc(maxval + 1, sizeof(int));
-
+	carr = calloc(maxval + 1, sizeof(int));
 	for (i = 0; i < size; i++)
-	{
-		index = array[i];
-		countarray[index] += 1;
-	}
-
+		carr[array[i]] += 1;
 	for (i = 1; i <= maxval + 1; i++)
-		countarray[i] += countarray[i - 1];
-	print_array(countarray, maxval + 1);
-
+		carr[i] += carr[i - 1];
+	print_array(carr, maxval + 1);
 	for (i = 0; i <= maxval; i++)
-		if (countarray[i] != countarray[i + 1] && countarray[i + 1])
-		{
-			instances = countarray[i + 1] - countarray[i];
-			while (instances)
-			{
-				array[countarray[i] + instances - 1] = i + 1;
-				instances--;
-			}
-		}
-	free(countarray);
+		if (carr[i] != carr[i + 1] && carr[i + 1])
+			for (j = carr[i + 1] - carr[i]; j > 0; j--)
+				array[carr[i] + j - 1] = i + 1;
+	free(carr);
 }
