@@ -7,11 +7,12 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *head = *list, *tail, *current = *list;
+	listint_t *head, *tail, *current;
 	bool swap = true;
 
 	if (!list || !*list || !(*list)->next)
 		return;
+	head = current = *list;
 	for (; current->next; tail = current)
 		current = current->next;
 	while (swap)
