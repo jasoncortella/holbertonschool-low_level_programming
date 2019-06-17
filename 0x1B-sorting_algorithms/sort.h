@@ -35,6 +35,7 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 int *rand_array(int len, int max);
-
+void swap_prev(listint_t **node);
+void swap_next(listint_t **node);
 
 #endif
