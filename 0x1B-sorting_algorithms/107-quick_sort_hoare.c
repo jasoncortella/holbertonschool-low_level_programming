@@ -45,25 +45,27 @@ void hoare_sort(int *array, size_t size, int lo, int hi)
 */
 int hoare_partition(int *array, size_t size, int lo, int hi)
 {
-	int pivot, tmp;
+	int i, j, pivot, tmp;
 
-	pivot = array[hi];
-	for (; lo <= hi; lo++, hi--)
+	pivot = array[lo + (hi - lo) / 2];
+	i = lo - 1;
+	j = hi + 1;
+	while (1)
 	{
-		while (array[lo] < pivot)
-			lo++;
-		while (array[hi] > pivot)
-			hi--;
-		if (lo <= hi)
-		{
-			if (lo != hi)
-			{
-				tmp = array[lo];
-				array[lo] = array[hi];
-				array[hi] = tmp;
-				print_array(array, size);
-			}
-		}
+		do {
+			i++;
+		}while (array[i] < pivot);
+
+		do {
+			j--;
+		}while (array[j] > pivot);
+
+		if (i >= j)
+			return (j);
+
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+		print_array(array, size);
 	}
-	return (hi);
 }
