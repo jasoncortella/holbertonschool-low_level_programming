@@ -11,6 +11,10 @@ void rad_bubble_sort(int *array, size_t size, int exp)
 {
 	size_t i, tmp;
 	bool swap = true;
+	char *alloc;
+
+	alloc = malloc(1);
+	free(alloc);
 
 	while (swap)
 	{
