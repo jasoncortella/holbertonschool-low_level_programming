@@ -2,7 +2,7 @@
 
 /**
  * get_val - gets the relative value of a card from it's string value
- * @str: string value of the card
+ * @node: node to convert
  * Return: Converted suit/card value of the card (1-52)
  *         Exits with a status of -1 invalid card specified
  */
