@@ -11,10 +11,6 @@ void rad_bubble_sort(int *array, size_t size, int exp)
 {
 	size_t i, tmp;
 	bool swap = true;
-	char *alloc;
-
-	alloc = malloc(1);
-	free(alloc);
 
 	while (swap)
 	{
@@ -48,7 +44,7 @@ void radix_sort(int *array, size_t size)
 	for (i = 0; i < size; i++)
 		max = array[i] > max ? array[i] : max;
 
-	for (exp = 1; max > exp; exp *= 10)
+	for (exp = 1; max / exp > 0; exp *= 10)
 	{
 		rad_bubble_sort(array, size, exp);
 		print_array(array, size);
