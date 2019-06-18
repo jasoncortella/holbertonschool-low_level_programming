@@ -5,7 +5,7 @@
  *                   the Bubble sort algorithm, with a targeted sort digit
  * @array: Array to sort
  * @size: Size of the array
- * @expon: Exponent to sort
+ * @exp: Exponent to sort
  */
 void rad_bubble_sort(int *array, size_t size, int exp)
 {
@@ -30,6 +30,12 @@ void rad_bubble_sort(int *array, size_t size, int exp)
 	}
 }
 
+/**
+ * radix_sort - sorts an array of integers in ascending order using
+ *              the radix sort algorithm
+ * @array: Array to sort
+ * @size: Size of the array
+ */
 void radix_sort(int *array, size_t size)
 {
 	int max = 0, exp;
