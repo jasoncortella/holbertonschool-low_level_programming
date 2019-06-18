@@ -54,11 +54,11 @@ int hoare_partition(int *array, size_t size, int lo, int hi)
 	{
 		do {
 			i++;
-		}while (array[i] < pivot);
+		} while (array[i] < pivot);
 
 		do {
 			j--;
-		}while (array[j] > pivot);
+		} while (array[j] > pivot);
 
 		if (i >= j)
 			return (j);
