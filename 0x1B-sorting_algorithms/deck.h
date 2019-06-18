@@ -49,7 +49,7 @@ typedef struct deck_node_s
 	struct deck_node_s *next;
 } deck_node_t;
 
-int get_val(deck_node_t *node);
+int value(deck_node_t *node);
 void swap_next(deck_node_t **node);
 void sort_deck(deck_node_t **deck);
 

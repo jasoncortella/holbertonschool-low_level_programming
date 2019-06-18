@@ -6,7 +6,7 @@
  * Return: Converted suit/card value of the card (1-52)
  *         Exits with a status of -1 invalid card specified
  */
-int get_val(deck_node_t *node)
+int value(deck_node_t *node)
 {
 	int i;
 	char *array[13] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9",
@@ -29,17 +29,17 @@ void swap_next(deck_node_t **node)
 	current = *node;
 	next = current->next;
 	prev = current->prev;
-	if (next->next)
-		next2 = next->next;
-	else
-		next2 = NULL;
-	prev = current->prev;
+	next2 = next->next ? next->next : NULL;
+
 	current->prev = next;
 	current->next = next2;
+
 	next->prev = prev;
 	next->next = current;
+
 	if (next2)
 		next2->prev = current;
+
 	if (prev)
 		prev->next = next;
 }
@@ -50,8 +50,7 @@ void swap_next(deck_node_t **node)
  */
 void sort_deck(deck_node_t **deck)
 {
-	int cv1, cv2;
-	deck_node_t *current;
+	deck_node_t *curr;
 	bool swap = true;
 
 	if (!deck || !*deck || !(*deck)->next)
@@ -59,18 +58,16 @@ void sort_deck(deck_node_t **deck)
 	while (swap)
 	{
 		swap = false;
-		current = *deck;
-		while (current->next)
+		curr = *deck;
+		while (curr->next)
 		{
-			cv1 = get_val(current);
-			cv2 = get_val(current->next);
-			if (cv1 < cv2)
-				current = current->next;
+			if (value(curr) < value(curr->next))
+				curr = curr->next;
 			else
 			{
-				swap_next(&current);
-				if (current == *deck)
-					*deck = current->prev;
+				swap_next(&curr);
+				if (curr == *deck)
+					*deck = curr->prev;
 				swap = true;
 			}
 		}
