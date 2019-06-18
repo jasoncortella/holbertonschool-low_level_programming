@@ -12,8 +12,6 @@ void rad_bubble_sort(int *array, size_t size, int exp)
 	size_t i, tmp;
 	bool swap = true;
 
-	if (!array || size < 2)
-		return;
 	while (swap)
 	{
 		swap = false;
@@ -41,6 +39,8 @@ void radix_sort(int *array, size_t size)
 	int max = 0, exp;
 	size_t i;
 
+	if (!array || size < 2)
+		return;
 	for (i = 0; i < size; i++)
 		max = array[i] > max ? array[i] : max;
 
