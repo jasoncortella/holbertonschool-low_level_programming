@@ -28,8 +28,8 @@ void hoare_sort(int *array, size_t size, int lo, int hi)
 	if (lo < hi)
 	{
 		p = hoare_partition(array, size, lo, hi);
-		hoare_sort(array, size, lo, p);
-		hoare_sort(array, size, p + 1, hi);
+		hoare_sort(array, size, lo, p - 1);
+		hoare_sort(array, size, p, hi);
 	}
 }
 
@@ -47,7 +47,7 @@ int hoare_partition(int *array, size_t size, int lo, int hi)
 {
 	int i, j, pivot, tmp;
 
-	pivot = array[lo + (hi - lo) / 2];
+	pivot = array[hi];
 	i = lo - 1;
 	j = hi + 1;
 	while (1)
@@ -61,7 +61,7 @@ int hoare_partition(int *array, size_t size, int lo, int hi)
 		} while (array[j] > pivot);
 
 		if (i >= j)
-			return (j);
+			return (i);
 
 		tmp = array[i];
 		array[i] = array[j];

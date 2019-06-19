@@ -41,5 +41,7 @@ int *rand_array(int len, int max);
 void swap_prev(listint_t **node);
 void swap_next(listint_t **node);
 void rad_bubble_sort(int *array, size_t size, int exp);
+void td_merge_sort(int *array, size_t size, int lo, int hi);
+void td_merge(int *array, int lo, int m, int hi);
 
 #endif
