@@ -16,4 +16,4 @@ def island_perimeter(grid):
         for j in range(len(grid[0])):
             if grid[i][j]:
                 pg[i+1][j+1] = 0
-    return sum(sum(pg,[]))
+    return sum(sum(pg, []))
