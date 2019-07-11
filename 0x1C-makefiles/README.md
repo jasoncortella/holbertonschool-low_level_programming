@@ -1,5 +1,5 @@
 # 0x1C. C - Makefiles
-## This directory contains answer files to [Holberton School](https://www.holbertonschool.com/) devops project 0x08
+## This directory contains answer files to [Holberton School](https://www.holbertonschool.com/) low level programming project 0x1C
 
 ### 0. make -f 0-Makefile
 * File: 0-Makefile
