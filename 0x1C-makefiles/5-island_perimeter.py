@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Function to find an island's perimeter"""
 
-# numpy as np
+# impor t numpy as np
 
 
 def island_perimeter(grid):
